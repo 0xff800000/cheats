@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="24">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"Unlimited Health"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : GRW.exe
+  Version: 
+  Date   : 2017-03-09
+  Author : STN
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(health,GRW.exe,48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 48 83 EC 40 8B 44) // should be unique
+alloc(newmem,$1000,"GRW.exe"+64E9B50)
+
+label(code)
+label(return)
+
+newmem:
+mov byte ptr [rcx+1f1], 1
+code:
+  mov [rsp+08],rbx
+  jmp return
+
+health:
+  jmp newmem
+return:
+registersymbol(health)
+
+[DISABLE]
+
+health:
+  db 48 89 5C 24 08
+
+unregistersymbol(health)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "GRW.exe"+64E9B50
+
+"GRW.exe"+64E9B2E: 48 8B 5C 24 30                 -  mov rbx,[rsp+30]
+"GRW.exe"+64E9B33: 48 8B 74 24 38                 -  mov rsi,[rsp+38]
+"GRW.exe"+64E9B38: 83 FF 03                       -  cmp edi,03
+"GRW.exe"+64E9B3B: 0F 94 D0                       -  sete al
+"GRW.exe"+64E9B3E: 48 83 C4 20                    -  add rsp,20
+"GRW.exe"+64E9B42: 5F                             -  pop rdi
+"GRW.exe"+64E9B43: C3                             -  ret 
+"GRW.exe"+64E9B44: CC                             -  int 3 
+"GRW.exe"+64E9B45: CC                             -  int 3 
+"GRW.exe"+64E9B46: 66 2E 0F 1F 84 00 00 00 00 00  -  nop cs:[rax+rax+00000000]
+// ---------- INJECTING HERE ----------
+"GRW.exe"+64E9B50: 48 89 5C 24 08                 -  mov [rsp+08],rbx
+// ---------- DONE INJECTING  ----------
+"GRW.exe"+64E9B55: 48 89 6C 24 10                 -  mov [rsp+10],rbp
+"GRW.exe"+64E9B5A: 48 89 74 24 18                 -  mov [rsp+18],rsi
+"GRW.exe"+64E9B5F: 57                             -  push rdi
+"GRW.exe"+64E9B60: 48 83 EC 40                    -  sub rsp,40
+"GRW.exe"+64E9B64: 8B 44 24 70                    -  mov eax,[rsp+70]
+"GRW.exe"+64E9B68: 8B B4 24 80 00 00 00           -  mov esi,[rsp+00000080]
+"GRW.exe"+64E9B6F: 48 8B 6C 24 78                 -  mov rbp,[rsp+78]
+"GRW.exe"+64E9B74: 89 74 24 30                    -  mov [rsp+30],esi
+"GRW.exe"+64E9B78: 48 89 6C 24 28                 -  mov [rsp+28],rbp
+"GRW.exe"+64E9B7D: 48 89 D7                       -  mov rdi,rdx
+}
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>112</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"No Reload"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : GRW.exe
+  Version: 
+  Date   : 2017-03-09
+  Author : STN
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(noreload,GRW.exe,48 8B 8F A0 03 00 00 48 89 DA 48) // should be unique
+alloc(newmem,$1000,"GRW.exe"+66AB88E)
+
+label(code)
+label(return)
+
+newmem:
+mov byte ptr [rsi+160], #99
+code:
+  mov rcx,[rdi+000003A0]
+  jmp return
+
+noreload:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(noreload)
+
+[DISABLE]
+
+noreload:
+  db 48 8B 8F A0 03 00 00
+
+unregistersymbol(noreload)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "GRW.exe"+66AB88E
+
+"GRW.exe"+66AB868: 75 0D                 -  jne GRW.exe+66AB877
+"GRW.exe"+66AB86A: 8B 05 64 10 1A FD     -  mov eax,[GRW.exe+384C8D4]
+"GRW.exe"+66AB870: C6 43 04 00           -  mov byte ptr [rbx+04],00
+"GRW.exe"+66AB874: 89 43 30              -  mov [rbx+30],eax
+"GRW.exe"+66AB877: BA 0F A2 C3 90        -  mov edx,90C3A20F
+"GRW.exe"+66AB87C: 48 89 F1              -  mov rcx,rsi
+"GRW.exe"+66AB87F: 8D 92 F2 5D 3C 6F     -  lea edx,[rdx+6F3C5DF2]
+"GRW.exe"+66AB885: E8 66 29 0C FE        -  call GRW.exe+476E1F0
+"GRW.exe"+66AB88A: 84 C0                 -  test al,al
+"GRW.exe"+66AB88C: 74 65                 -  je GRW.exe+66AB8F3
+// ---------- INJECTING HERE ----------
+"GRW.exe"+66AB88E: 48 8B 8F A0 03 00 00  -  mov rcx,[rdi+000003A0]
+// ---------- DONE INJECTING  ----------
+"GRW.exe"+66AB895: 48 89 DA              -  mov rdx,rbx
+"GRW.exe"+66AB898: 48 89 6C 24 30        -  mov [rsp+30],rbp
+"GRW.exe"+66AB89D: E8 EE D7 FF FF        -  call GRW.exe+66A9090
+"GRW.exe"+66AB8A2: 83 7B 30 01           -  cmp dword ptr [rbx+30],01
+"GRW.exe"+66AB8A6: 0F B6 E8              -  movzx ebp,al
+"GRW.exe"+66AB8A9: 7E 2F                 -  jle GRW.exe+66AB8DA
+"GRW.exe"+66AB8AB: 48 89 F1              -  mov rcx,rsi
+"GRW.exe"+66AB8AE: E8 CD 5B 0C FE        -  call GRW.exe+4771480
+"GRW.exe"+66AB8B3: 83 F8 06              -  cmp eax,06
+"GRW.exe"+66AB8B6: 75 22                 -  jne GRW.exe+66AB8DA
+}
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>113</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>15</ID>
+      <Description>"Unlimited Ammo"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : GRW.exe
+  Version: 
+  Date   : 2017-03-09
+  Author : STN
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(ammo,GRW.exe,48 8D 4F 10 0F B7 D0) // should be unique
+alloc(newmem,$1000,"GRW.exe"+471D616)
+
+label(code)
+label(return)
+
+newmem:
+mov rax, #999
+code:
+  lea rcx,[rdi+10]
+  movzx edx,ax
+  jmp return
+
+ammo:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(ammo)
+
+[DISABLE]
+
+ammo:
+  db 48 8D 4F 10 0F B7 D0
+
+unregistersymbol(ammo)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "GRW.exe"+471D616
+
+"GRW.exe"+471D5EE: 48 89 C7                 -  mov rdi,rax
+"GRW.exe"+471D5F1: 48 85 C0                 -  test rax,rax
+"GRW.exe"+471D5F4: 74 2C                    -  je GRW.exe+471D622
+"GRW.exe"+471D5F6: 48 8D 4C 24 58           -  lea rcx,[rsp+58]
+"GRW.exe"+471D5FB: E8 50 A2 0F 00           -  call GRW.exe+4817850
+"GRW.exe"+471D600: 48 8D 4F 38              -  lea rcx,[rdi+38]
+"GRW.exe"+471D604: 0F B7 D0                 -  movzx edx,ax
+"GRW.exe"+471D607: E8 D4 6A 04 00           -  call GRW.exe+47640E0
+"GRW.exe"+471D60C: 48 8D 4C 24 30           -  lea rcx,[rsp+30]
+"GRW.exe"+471D611: E8 3A A2 0F 00           -  call GRW.exe+4817850
+// ---------- INJECTING HERE ----------
+"GRW.exe"+471D616: 48 8D 4F 10              -  lea rcx,[rdi+10]
+"GRW.exe"+471D61A: 0F B7 D0                 -  movzx edx,ax
+// ---------- DONE INJECTING  ----------
+"GRW.exe"+471D61D: E8 BE 6A 04 00           -  call GRW.exe+47640E0
+"GRW.exe"+471D622: 45 31 C9                 -  xor r9d,r9d
+"GRW.exe"+471D625: 48 8D 4B 40              -  lea rcx,[rbx+40]
+"GRW.exe"+471D629: 45 31 C0                 -  xor r8d,r8d
+"GRW.exe"+471D62C: 41 8D 51 67              -  lea edx,[r9+67]
+"GRW.exe"+471D630: E8 BB 1D 5D 01           -  call GRW.exe+5CEF3F0
+"GRW.exe"+471D635: 48 8D 4C 24 58           -  lea rcx,[rsp+58]
+"GRW.exe"+471D63A: 4C 89 64 24 20           -  mov [rsp+20],r12
+"GRW.exe"+471D63F: E8 5C 7E FE FF           -  call GRW.exe+47054A0
+"GRW.exe"+471D644: 48 8D 4C 24 30           -  lea rcx,[rsp+30]
+}
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>114</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>21</ID>
+      <Description>"Unlimited Grenades"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : GRW.exe
+  Version: 
+  Date   : 2017-03-09
+  Author : STN
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(nades,GRW.exe,0F B7 41 58 66 85 C0) // should be unique
+alloc(newmem,$1000,"GRW.exe"+469685D)
+
+label(code)
+label(return)
+
+newmem:
+mov word ptr [rcx+58], 10
+code:
+  movzx eax,word ptr [rcx+58]
+  test ax,ax
+  jmp return
+
+nades:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(nades)
+
+[DISABLE]
+
+nades:
+  db 0F B7 41 58 66 85 C0
+
+unregistersymbol(nades)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "GRW.exe"+469685D
+
+"GRW.exe"+469683A: CC                                   -  int 3 
+"GRW.exe"+469683B: 0F 1F 44 00 00                       -  nop [rax+rax+00]
+"GRW.exe"+4696840: 48 83 EC 28                          -  sub rsp,28
+"GRW.exe"+4696844: 66 83 79 5A 00                       -  cmp word ptr [rcx+5A],00
+"GRW.exe"+4696849: 7C 2C                                -  jl GRW.exe+4696877
+"GRW.exe"+469684B: 48 8B 05 86 67 96 FF                 -  mov rax,[GRW.exe+3FFCFD8]
+"GRW.exe"+4696852: 48 85 C0                             -  test rax,rax
+"GRW.exe"+4696855: 74 06                                -  je GRW.exe+469685D
+"GRW.exe"+4696857: 80 78 30 00                          -  cmp byte ptr [rax+30],00
+"GRW.exe"+469685B: 75 1A                                -  jne GRW.exe+4696877
+// ---------- INJECTING HERE ----------
+"GRW.exe"+469685D: 0F B7 41 58                          -  movzx eax,word ptr [rcx+58]
+"GRW.exe"+4696861: 66 85 C0                             -  test ax,ax
+// ---------- DONE INJECTING  ----------
+"GRW.exe"+4696864: 74 1C                                -  je GRW.exe+4696882
+"GRW.exe"+4696866: 66 FF C8                             -  dec ax
+"GRW.exe"+4696869: 66 89 41 58                          -  mov [rcx+58],ax
+"GRW.exe"+469686D: 48 8B 41 10                          -  mov rax,[rcx+10]
+"GRW.exe"+4696871: FF 90 10 05 00 00                    -  call qword ptr [rax+00000510]
+"GRW.exe"+4696877: B0 01                                -  mov al,01
+"GRW.exe"+4696879: 48 83 C4 28                          -  add rsp,28
+"GRW.exe"+469687D: C3                                   -  ret 
+"GRW.exe"+469687E: 2E 97                                -  xchg eax,edi
+"GRW.exe"+4696880: 73 46                                -  jae GRW.exe+46968C8
+}
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>115</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>27</ID>
+      <Description>"Unlimited Drone Life"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : GRW.exe
+  Version: 
+  Date   : 2017-03-09
+  Author : STN
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(deonebattery,GRW.exe,48 89 87 80 00 00 00 48 8B 47 20) // should be unique
+alloc(newmem,$1000,"GRW.exe"+66BED23)
+
+label(code)
+label(return)
+
+newmem:
+mov rax, #999999999
+code:
+  mov [rdi+00000080],rax
+  jmp return
+
+deonebattery:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(deonebattery)
+
+[DISABLE]
+
+deonebattery:
+  db 48 89 87 80 00 00 00
+
+unregistersymbol(deonebattery)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "GRW.exe"+66BED23
+
+"GRW.exe"+66BECF9: EB 2F                             -  jmp GRW.exe+66BED2A
+"GRW.exe"+66BECFB: 48 8B 47 50                       -  mov rax,[rdi+50]
+"GRW.exe"+66BECFF: 48 63 48 0C                       -  movsxd  rcx,dword ptr [rax+0C]
+"GRW.exe"+66BED03: 48 8B 00                          -  mov rax,[rax]
+"GRW.exe"+66BED06: 48 C1 E1 20                       -  shl rcx,20
+"GRW.exe"+66BED0A: 48 C1 F9 3F                       -  sar rcx,3F
+"GRW.exe"+66BED0E: 48 21 C8                          -  and rax,rcx
+"GRW.exe"+66BED11: F3 0F 59 70 20                    -  mulss xmm6,[rax+20]
+"GRW.exe"+66BED16: F3 0F 59 35 A6 04 8D FC           -  mulss xmm6,[GRW.exe+2F8F1C4]
+"GRW.exe"+66BED1E: F3 48 0F 2C C6                    -  cvttss2si rax,xmm6
+// ---------- INJECTING HERE ----------
+"GRW.exe"+66BED23: 48 89 87 80 00 00 00              -  mov [rdi+00000080],rax
+// ---------- DONE INJECTING  ----------
+"GRW.exe"+66BED2A: 48 8B 47 20                       -  mov rax,[rdi+20]
+"GRW.exe"+66BED2E: BA 01 00 00 00                    -  mov edx,00000001
+"GRW.exe"+66BED33: 48 89 F9                          -  mov rcx,rdi
+"GRW.exe"+66BED36: 0F 28 74 24 20                    -  movaps xmm6,[rsp+20]
+"GRW.exe"+66BED3B: 48 83 C4 30                       -  add rsp,30
+"GRW.exe"+66BED3F: 5F                                -  pop rdi
+"GRW.exe"+66BED40: FF A0 10 0A 00 00                 -  jmp qword ptr [rax+00000A10]
+"GRW.exe"+66BED46: CC                                -  int 3 
+"GRW.exe"+66BED47: CC                                -  int 3 
+"GRW.exe"+66BED48: CC                                -  int 3 
+}
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>116</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

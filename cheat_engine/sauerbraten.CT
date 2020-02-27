@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="24">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Infinite ammo"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"sauerbraten.exe"+CB907) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+//dec [r12+rcx*4+0000019C]
+
+exit:
+jmp returnhere
+
+"sauerbraten.exe"+CB907:
+jmp newmem
+nop
+nop
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"sauerbraten.exe"+CB907:
+dec [r12+rcx*4+0000019C]
+//Alt: db 41 FF 8C 8C 9C 01 00 00
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"Infinite health"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"sauerbraten.exe"+DA9B9) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+//sub [r12+00000180],edi
+
+exit:
+jmp returnhere
+
+"sauerbraten.exe"+DA9B9:
+jmp newmem
+nop
+nop
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"sauerbraten.exe"+DA9B9:
+sub [r12+00000180],edi
+//Alt: db 41 29 BC 24 80 01 00 00
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"One shot"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"sauerbraten.exe"+7818C) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+//sub [rdi+00000180],ebx
+mov [rdi+00000180],0
+
+exit:
+jmp returnhere
+
+"sauerbraten.exe"+7818C:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"sauerbraten.exe"+7818C:
+sub [rdi+00000180],ebx
+//Alt: db 29 9F 80 01 00 00
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="16">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>14</ID>
+      <Description>"Money"</Description>
+      <Color>80000008</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"NMS.exe"+463875) 
+label(returnhere)
+label(originalcode)
+label(exit)
+alloc(money,8)
+alloc(moneyL,8)
+registersymbol(money)
+
+moneyL:
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [rcx+000000F4],#9999999999999
+nop
+
+exit:
+jmp returnhere
+
+"NMS.exe"+463875:
+jmp newmem
+nop
+returnhere:
+
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(money)
+dealloc(moneyL)
+unregistersymbol(money)
+dealloc(newmem)
+"NMS.exe"+463875:
+sub [rcx+000000F4],edx
+//Alt: db 29 91 F4 00 00 00
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>16</ID>
+      <Description>"Infinite grenades"</Description>
+      <Color>80000008</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"NMS.exe"+A2B4C9) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+//dec [r12+00000F40]
+
+exit:
+jmp returnhere
+
+"NMS.exe"+A2B4C9:
+jmp newmem
+nop
+nop
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"NMS.exe"+A2B4C9:
+dec [r12+00000F40]
+//Alt: db 41 FF 8C 24 40 0F 00 00
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

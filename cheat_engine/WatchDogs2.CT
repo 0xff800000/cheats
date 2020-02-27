@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="24">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Auto Assemble script"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"Disrupt_64.dll"+534C899) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+//dec [rbx+000000A8]
+
+exit:
+jmp returnhere
+
+"Disrupt_64.dll"+534C899:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"Disrupt_64.dll"+534C899:
+dec [rbx+000000A8]
+//Alt: db FF 8B A8 00 00 00
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>10</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1BD06DF24B0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>11</ID>
+      <Description>"Auto Assemble script"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"Disrupt_64.dll"+534ABBE) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+inc eax
+mov [rcx+10],eax
+mov al,01
+
+exit:
+jmp returnhere
+
+"Disrupt_64.dll"+534ABBE:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"Disrupt_64.dll"+534ABBE:
+mov [rcx+10],eax
+mov al,01
+//Alt: db 89 41 10 B0 01
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="16">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Auto Assemble script"</Description>
+      <Color>80000008</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+//mov [edx],eax
+mov esp,ebp
+pop ebp
+originalcode:
+//mov [edx],eax
+//mov esp,ebp
+//pop ebp
+
+exit:
+jmp returnhere
+
+"BorderlandsPreSequel.exe"+638B7A:
+jmp newmem
+returnhere:
+
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"BorderlandsPreSequel.exe"+638B7A:
+mov [edx],eax
+mov esp,ebp
+pop ebp
+//Alt: db 89 02 8B E5 5D
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>4C9220C0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>4E120944</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>4E1209B4</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"Auto Assemble script"</Description>
+      <Color>80000008</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+//movss [esi+6C],xmm0
+nop
+originalcode:
+//movss [esi+6C],xmm0
+
+exit:
+jmp returnhere
+
+"BorderlandsPreSequel.exe"+48E4D2:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"BorderlandsPreSequel.exe"+48E4D2:
+movss [esi+6C],xmm0
+//Alt: db F3 0F 11 46 6C
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2A0E39C0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2A0EA7C0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>25C21204</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>10</ID>
+      <Description>"Auto Assemble script"</Description>
+      <Color>80000008</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+//fstp dword ptr [ecx+6C]
+nop
+jmp BorderlandsPreSequel.GetStackOwnerClass+44C509
+originalcode:
+fstp dword ptr [ecx+6C]
+jmp BorderlandsPreSequel.GetStackOwnerClass+44C509
+
+exit:
+jmp returnhere
+
+"BorderlandsPreSequel.exe"+6F1C21:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"BorderlandsPreSequel.exe"+6F1C21:
+fstp dword ptr [ecx+6C]
+jmp BorderlandsPreSequel.GetStackOwnerClass+44C509
+//Alt: db D9 59 6C EB 03
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>11</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>0017E460</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>0017FE90</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>13</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>25C21204</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>14</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2A0E39C0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>15</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2A0EA7C0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>16</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>wow64cpu.dll+4830</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>17</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>4999DEC0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>18</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>310D7CB4</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"No description"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>310D7C44</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>20</ID>
+      <Description>"Auto Assemble script"</Description>
+      <Color>80000008</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop
+originalcode:
+movss [edi+6C],xmm0
+
+exit:
+jmp returnhere
+
+"BorderlandsPreSequel.exe"+A0F86A:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"BorderlandsPreSequel.exe"+A0F86A:
+movss [edi+6C],xmm0
+//Alt: db F3 0F 11 47 6C
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>21</ID>
+      <Description>"Auto Assemble script"</Description>
+      <Color>80000008</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop
+originalcode:
+//movss [edi+6C],xmm0
+
+exit:
+jmp returnhere
+
+"BorderlandsPreSequel.exe"+A0F82D:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"BorderlandsPreSequel.exe"+A0F82D:
+movss [edi+6C],xmm0
+//Alt: db F3 0F 11 47 6C
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>22</ID>
+      <Description>"Auto Assemble script"</Description>
+      <Color>80000008</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop
+originalcode:
+//movss [edi+6C],xmm0
+
+exit:
+jmp returnhere
+
+"BorderlandsPreSequel.exe"+A0F86A:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"BorderlandsPreSequel.exe"+A0F86A:
+movss [edi+6C],xmm0
+//Alt: db F3 0F 11 47 6C
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>23</ID>
+      <Description>"Infinite grenade"</Description>
+      <Color>80000008</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop
+originalcode:
+//movss [esi+6C],xmm0
+
+exit:
+jmp returnhere
+
+"BorderlandsPreSequel.exe"+48E4D2:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"BorderlandsPreSequel.exe"+48E4D2:
+movss [esi+6C],xmm0
+//Alt: db F3 0F 11 46 6C
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

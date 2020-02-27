@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="24">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Infinite ammo"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : FarCry5.exe
+  Version: 
+  Date   : 2018-06-19
+  Author : Dan Yvan Baumgartner
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,FC_m64.dll,48 89 5C 24 08 57 48 83 EC 20 89 D7 48 89 CB 3B 91 88) // should be unique
+alloc(newmem,$1000,"FC_m64.dll"+A92DDD0)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  ret
+  //mov [rsp+08],rbx
+  jmp return
+
+INJECT:
+  jmp newmem
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 48 89 5C 24 08
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "FC_m64.dll"+A92DDD0
+
+"FC_m64.dll"+A92DDAD: 48 8D 64 24 08           -  lea rsp,[rsp+08]
+"FC_m64.dll"+A92DDB2: FF C3                    -  inc ebx
+"FC_m64.dll"+A92DDB4: 48 F7 DE                 -  neg rsi
+"FC_m64.dll"+A92DDB7: 48 8D 1D 2A D4 B1 FC     -  lea rbx,[FC_m64.dll+744B1E8]
+"FC_m64.dll"+A92DDBE: 66 45 01 CB              -  add r11w,r9w
+"FC_m64.dll"+A92DDC2: 45 19 DB                 -  sbb r11d,r11d
+"FC_m64.dll"+A92DDC5: FF E3                    -  jmp rbx
+"FC_m64.dll"+A92DDC7: A9 0F 1F 84 00           -  test eax,00841F0F
+"FC_m64.dll"+A92DDCC: 00 00                    -  add [rax],al
+"FC_m64.dll"+A92DDCE: 00 00                    -  add [rax],al
+// ---------- INJECTING HERE ----------
+"FC_m64.dll"+A92DDD0: 48 89 5C 24 08           -  mov [rsp+08],rbx
+// ---------- DONE INJECTING  ----------
+"FC_m64.dll"+A92DDD5: 57                       -  push rdi
+"FC_m64.dll"+A92DDD6: 48 83 EC 20              -  sub rsp,20
+"FC_m64.dll"+A92DDDA: 89 D7                    -  mov edi,edx
+"FC_m64.dll"+A92DDDC: 48 89 CB                 -  mov rbx,rcx
+"FC_m64.dll"+A92DDDF: 3B 91 88 01 00 00        -  cmp edx,[rcx+00000188]
+"FC_m64.dll"+A92DDE5: 74 3C                    -  je FC_m64.dll+A92DE23
+"FC_m64.dll"+A92DDE7: E8 84 E5 3C F7           -  call FC_m64.dll+1CFC370
+"FC_m64.dll"+A92DDEC: 39 F8                    -  cmp eax,edi
+"FC_m64.dll"+A92DDEE: C6 83 C4 00 00 00 01     -  mov byte ptr [rbx+000000C4],01
+"FC_m64.dll"+A92DDF5: 41 89 F8                 -  mov r8d,edi
+}
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

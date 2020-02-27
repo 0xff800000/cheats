@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="24">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"No description"</Description>
+      <LastState Value="4027E9D7" RealAddress="023AEF44"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>4 Bytes</VariableType>
+      <Address>023AEF44</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="2.623647451" RealAddress="023AEF44"/>
+      <VariableType>Float</VariableType>
+      <Address>"GoneHome.exe"+00BAB950</Address>
+      <Offsets>
+        <Offset>14C</Offset>
+        <Offset>180</Offset>
+        <Offset>90</Offset>
+        <Offset>230</Offset>
+        <Offset>6D0</Offset>
+      </Offsets>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys/>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Increase Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>0.1</Value>
+          <ID>1</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="-3.004885912" RealAddress="023AEF54"/>
+      <VariableType>Float</VariableType>
+      <Address>"GoneHome.exe"+00BAB950</Address>
+      <Offsets>
+        <Offset>15C</Offset>
+        <Offset>180</Offset>
+        <Offset>90</Offset>
+        <Offset>230</Offset>
+        <Offset>6D0</Offset>
+      </Offsets>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Increase Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Description>0.1</Description>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="-3.301036119" RealAddress="023AEF64"/>
+      <VariableType>Float</VariableType>
+      <Address>"GoneHome.exe"+00BAB950</Address>
+      <Offsets>
+        <Offset>16C</Offset>
+        <Offset>180</Offset>
+        <Offset>90</Offset>
+        <Offset>230</Offset>
+        <Offset>6D0</Offset>
+      </Offsets>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Increase Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>0.1</Value>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

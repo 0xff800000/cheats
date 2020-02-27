@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="24">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>sensitivity</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Sensitivity X"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"gta-sa.exe"+7FC05C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Sensitivity Y"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"gta-sa.exe"+7FC058</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"Auto Assemble script"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+00bec058:
+dd 3A03126A
+00bec05c:
+dd 3A03126A
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"Sen x hex"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+7FC05C</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="24">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Infinite ammo clip"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : Prey.exe
+  Version: 
+  Date   : 2018-07-21
+  Author : Dan Yvan Baumgartner
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+aobscanmodule(INJECT,Prey.exe,89 91 E4 03 00 00) // should be unique
+alloc(newmem,$1000,"Prey.exe"+81986CA)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  //mov [rcx+000003E4],edx
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+INJECT:
+  db 89 91 E4 03 00 00
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "Prey.exe"+81986CA
+
+"Prey.exe"+819869C: 0F 88 6C DC A0 00                          -  js Prey.exe+8BA630E
+"Prey.exe"+81986A2: 66 66 66 66 66 2E 0F 1F 84 00 00 00 00 00  -  nop cs:[rax+rax+00000000]
+"Prey.exe"+81986B0: 48 89 5C 24 08                             -  mov [rsp+08],rbx
+"Prey.exe"+81986B5: 57                                         -  push rdi
+"Prey.exe"+81986B6: 48 83 EC 20                                -  sub rsp,20
+"Prey.exe"+81986BA: 8B B9 E4 03 00 00                          -  mov edi,[rcx+000003E4]
+"Prey.exe"+81986C0: 48 89 CB                                   -  mov rbx,rcx
+"Prey.exe"+81986C3: 39 D7                                      -  cmp edi,edx
+"Prey.exe"+81986C5: 74 5B                                      -  je Prey.exe+8198722
+"Prey.exe"+81986C7: 48 8B 01                                   -  mov rax,[rcx]
+// ---------- INJECTING HERE ----------
+"Prey.exe"+81986CA: 89 91 E4 03 00 00                          -  mov [rcx+000003E4],edx
+// ---------- DONE INJECTING  ----------
+"Prey.exe"+81986D0: FF 50 30                                   -  call qword ptr [rax+30]
+"Prey.exe"+81986D3: 8B 8B E4 03 00 00                          -  mov ecx,[rbx+000003E4]
+"Prey.exe"+81986D9: 85 C9                                      -  test ecx,ecx
+"Prey.exe"+81986DB: 79 0C                                      -  jns Prey.exe+81986E9
+"Prey.exe"+81986DD: C7 83 E4 03 00 00 00 00 00 00              -  mov [rbx+000003E4],00000000
+"Prey.exe"+81986E7: EB 0A                                      -  jmp Prey.exe+81986F3
+"Prey.exe"+81986E9: 39 C1                                      -  cmp ecx,eax
+"Prey.exe"+81986EB: 7E 06                                      -  jle Prey.exe+81986F3
+"Prey.exe"+81986ED: 89 83 E4 03 00 00                          -  mov [rbx+000003E4],eax
+"Prey.exe"+81986F3: 3B BB E4 03 00 00                          -  cmp edi,[rbx+000003E4]
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"Infinite ammo"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : Prey.exe
+  Version: 
+  Date   : 2018-07-21
+  Author : Dan Yvan Baumgartner
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+aobscanmodule(INJECT,Prey.exe,89 43 54 85 D2) // should be unique
+alloc(newmem,$1000,"Prey.exe"+11BD182)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  //mov [rbx+54],eax
+  nop
+  test edx,edx
+  jmp return
+
+INJECT:
+  jmp newmem
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+INJECT:
+  db 89 43 54 85 D2
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "Prey.exe"+11BD182
+
+"Prey.exe"+11BD15F: 44 8B CE              -  mov r9d,esi
+"Prey.exe"+11BD162: 48 8B D0              -  mov rdx,rax
+"Prey.exe"+11BD165: 44 8B C7              -  mov r8d,edi
+"Prey.exe"+11BD168: E8 D3 03 0A FF        -  call Prey.exe+25D540
+"Prey.exe"+11BD16D: 8B 53 58              -  mov edx,[rbx+58]
+"Prey.exe"+11BD170: 3B F7                 -  cmp esi,edi
+"Prey.exe"+11BD172: 48 8D 44 24 30        -  lea rax,[rsp+30]
+"Prey.exe"+11BD177: 48 8D 4C 24 38        -  lea rcx,[rsp+38]
+"Prey.exe"+11BD17C: 48 0F 4D C1           -  cmovge rax,rcx
+"Prey.exe"+11BD180: 8B 00                 -  mov eax,[rax]
+// ---------- INJECTING HERE ----------
+"Prey.exe"+11BD182: 89 43 54              -  mov [rbx+54],eax
+"Prey.exe"+11BD185: 85 D2                 -  test edx,edx
+// ---------- DONE INJECTING  ----------
+"Prey.exe"+11BD187: 74 45                 -  je Prey.exe+11BD1CE
+"Prey.exe"+11BD189: 48 8B 03              -  mov rax,[rbx]
+"Prey.exe"+11BD18C: 48 8B CB              -  mov rcx,rbx
+"Prey.exe"+11BD18F: FF 90 28 02 00 00     -  call qword ptr [rax+00000228]
+"Prey.exe"+11BD195: 48 8B F8              -  mov rdi,rax
+"Prey.exe"+11BD198: 48 85 C0              -  test rax,rax
+"Prey.exe"+11BD19B: 74 63                 -  je Prey.exe+11BD200
+"Prey.exe"+11BD19D: 8B 5B 30              -  mov ebx,[rbx+30]
+"Prey.exe"+11BD1A0: 4C 8B 00              -  mov r8,[rax]
+"Prey.exe"+11BD1A3: 48 8B C8              -  mov rcx,rax
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>18</ID>
+      <Description>"Infinite health"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : Prey.exe
+  Version: 
+  Date   : 2018-07-24
+  Author : Dan Yvan Baumgartner
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+aobscanmodule(INJECT,Prey.exe,F3 0F 11 73 40 48 8B 05) // should be unique
+alloc(newmem,$1000,"Prey.exe"+15F06EA)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  //movss [rbx+40],xmm6
+  jmp return
+
+INJECT:
+  jmp newmem
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+INJECT:
+  db F3 0F 11 73 40
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "Prey.exe"+15F06EA
+
+"Prey.exe"+15F06C1: 48 89 BC 24 D0 00 00 00     -  mov [rsp+000000D0],rdi
+"Prey.exe"+15F06C9: 44 0F 29 84 24 80 00 00 00  -  movaps [rsp+00000080],xmm8
+"Prey.exe"+15F06D2: 45 0F 57 C0                 -  xorps xmm8,xmm8
+"Prey.exe"+15F06D6: 41 0F 2F F0                 -  comiss xmm6,xmm8
+"Prey.exe"+15F06DA: 73 06                       -  jae Prey.exe+15F06E2
+"Prey.exe"+15F06DC: 41 0F 28 F0                 -  movaps xmm6,xmm8
+"Prey.exe"+15F06E0: EB 08                       -  jmp Prey.exe+15F06EA
+"Prey.exe"+15F06E2: 0F 2F F0                    -  comiss xmm6,xmm0
+"Prey.exe"+15F06E5: 72 03                       -  jb Prey.exe+15F06EA
+"Prey.exe"+15F06E7: 0F 28 F0                    -  movaps xmm6,xmm0
+// ---------- INJECTING HERE ----------
+"Prey.exe"+15F06EA: F3 0F 11 73 40              -  movss [rbx+40],xmm6
+// ---------- DONE INJECTING  ----------
+"Prey.exe"+15F06EF: 48 8B 05 F2 EE E1 00        -  mov rax,[Prey.exe+240F5E8]
+"Prey.exe"+15F06F6: 48 8B 88 08 03 00 00        -  mov rcx,[rax+00000308]
+"Prey.exe"+15F06FD: E8 FE 26 C9 FF              -  call Prey.exe+1282E00
+"Prey.exe"+15F0702: 48 8B 18                    -  mov rbx,[rax]
+"Prey.exe"+15F0705: 48 8B 78 08                 -  mov rdi,[rax+08]
+"Prey.exe"+15F0709: 48 3B DF                    -  cmp rbx,rdi
+"Prey.exe"+15F070C: 74 13                       -  je Prey.exe+15F0721
+"Prey.exe"+15F070E: 66 90                       -  nop 
+"Prey.exe"+15F0710: 48 8B 0B                    -  mov rcx,[rbx]
+"Prey.exe"+15F0713: 48 8B 01                    -  mov rax,[rcx]
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>22</ID>
+      <Description>"One shot mech"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"Prey.exe"+166D186) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+movss [rax+40],xmm0
+mov [rax+40],0
+
+exit:
+jmp returnhere
+
+"Prey.exe"+166D186:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"Prey.exe"+166D186:
+movss [rax+40],xmm0
+//Alt: db F3 0F 11 40 40
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>20</ID>
+      <Description>"One shot people"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"Prey.exe"+15A99DB) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+movss [rax+40],xmm0
+mov [rax+40],0
+
+exit:
+jmp returnhere
+
+"Prey.exe"+15A99DB:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"Prey.exe"+15A99DB:
+movss [rax+40],xmm0
+//Alt: db F3 0F 11 40 40
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>8B371810</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>21</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>13EDE9E80</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>23</ID>
+      <Description>"Infinite ammo clip 2"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"Prey.exe"+81986CA) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+//mov [rcx+000003E4],edx
+
+exit:
+jmp returnhere
+
+"Prey.exe"+81986CA:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"Prey.exe"+81986CA:
+mov [rcx+000003E4],edx
+//Alt: db 89 91 E4 03 00 00
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>24</ID>
+      <Description>"Infinite ammo 2"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"Prey.exe"+11BD182) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+//mov [rbx+54],eax
+test edx,edx
+
+exit:
+jmp returnhere
+
+"Prey.exe"+11BD182:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"Prey.exe"+11BD182:
+mov [rbx+54],eax
+test edx,edx
+//Alt: db 89 43 54 85 D2
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>25</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>944AFB84</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols>
+    <SymbolEntry>
+      <Name>INJECT</Name>
+      <Address> 1415F06EA</Address>
+    </SymbolEntry>
+  </UserdefinedSymbols>
+</CheatTable>

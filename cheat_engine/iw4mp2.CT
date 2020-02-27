@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="16">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>16</ID>
+      <Description>"Joueur 1"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>64</ID>
+          <Description>"Nom in game"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16A8704</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>0</ID>
+          <Description>"Arme principale "</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16A5854</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>65</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16A583C</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>17</ID>
+      <Description>"Joueur 2"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"Arme principale "</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16C0BB4</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"Joueur 3"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"Arme principale "</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16C0BA8</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>20</ID>
+      <Description>"Joueur 4"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>27</ID>
+          <Description>"Nom in-game 1"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16AF3DC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"Arme principale "</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+169EB7C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>18</ID>
+          <Description>"Arme secondaire "</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+169EB64</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>21</ID>
+      <Description>"Joueur 5"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>4</ID>
+          <Description>"Arme principale "</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16AC52C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>22</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16AC514</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>15</ID>
+      <Description>"Joueur 6"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>48</ID>
+          <Description>"Nom in game"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16B60B4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"Arme principale"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16B3204</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>14</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16B31EC</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>23</ID>
+      <Description>"Joueur 7"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>57</ID>
+          <Description>"Nom in game"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16C70D0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>11</ID>
+          <Description>"Arme principale"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16C4220</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>56</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16C4208</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>24</ID>
+      <Description>"Joueur 8"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>12</ID>
+          <Description>"Arme principale"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16B6870</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>25</ID>
+      <Description>"Joueur 9"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>58</ID>
+          <Description>"Nom in game"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16ABD70</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>13</ID>
+          <Description>"Arme principale"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16A8EC0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>59</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16A8EAC</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>44</ID>
+      <Description>"Joueur 10"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>41</ID>
+          <Description>"Nom In Game"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16BCD8C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>42</ID>
+          <Description>"Arme principale"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16B9EDC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>43</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16B9EC4</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>53</ID>
+      <Description>"Joueur 11"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>52</ID>
+          <Description>"Nom in game"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16B2A48</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>54</ID>
+          <Description>"Arme principale"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16AFB98</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>55</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16AFB80</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>60</ID>
+      <Description>"Joueur 12"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>63</ID>
+          <Description>"Nom in game"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16D80EC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>61</ID>
+          <Description>"Arme principale"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16D523C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>62</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16D5224</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>67</ID>
+      <Description>"Joueur 13"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>69</ID>
+          <Description>"Nom ingame"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16DB758</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>68</ID>
+          <Description>"Arme principale"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16D88A8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>66</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16D8890</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>71</ID>
+      <Description>"Joueur 14"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>70</ID>
+          <Description>"Nom in game"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16D4A80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>72</ID>
+          <Description>"Arme principale"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16D1BD0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>73</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16D1BB8</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>77</ID>
+      <Description>"Joueur 15"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>76</ID>
+          <Description>"Nom in game"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16D1414</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>75</ID>
+          <Description>"Arme principale"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16CE564</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>74</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16CE54C</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>79</ID>
+      <Description>"Joueur 16"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>78</ID>
+          <Description>"No description"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16A1A2C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>80</ID>
+          <Description>"No description"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+169EB7C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>81</ID>
+          <Description>"No description"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+169EB64</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>85</ID>
+      <Description>"Joueur 17"</Description>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>84</ID>
+          <Description>"Nom in game"</Description>
+          <Color>80000008</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>iw4mp.exe+16A5098</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>82</ID>
+          <Description>"Arme principale"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16A21E8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>83</ID>
+          <Description>"Arme secondaire"</Description>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>iw4mp.exe+16A21D0</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"Vie"</Description>
+      <Color>00FF00</Color>
+      <VariableType>Float</VariableType>
+      <Address>iw4mp.exe+764210</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>6</ID>
+          <Description>"No description"</Description>
+          <Color>80000008</Color>
+          <VariableType>Float</VariableType>
+          <Address>iw4mp.exe+733960</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>7</ID>
+          <Description>"No description"</Description>
+          <Color>80000008</Color>
+          <VariableType>Float</VariableType>
+          <Address>iw4mp.exe+42C76C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>8</ID>
+          <Description>"No description"</Description>
+          <Color>80000008</Color>
+          <VariableType>Float</VariableType>
+          <Address>iw4mp.exe+3F8D80</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
