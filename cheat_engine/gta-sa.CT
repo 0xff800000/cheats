@@ -2,46 +2,856 @@
 <CheatTable CheatEngineTableVersion="24">
   <CheatEntries>
     <CheatEntry>
-      <ID>0</ID>
-      <Description>"No description"</Description>
-      <VariableType>Float</VariableType>
-      <Address>sensitivity</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>2</ID>
-      <Description>"Sensitivity X"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"gta-sa.exe"+7FC05C</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>1</ID>
-      <Description>"Sensitivity Y"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"gta-sa.exe"+7FC058</Address>
-    </CheatEntry>
-    <CheatEntry>
       <ID>4</ID>
-      <Description>"Auto Assemble script"</Description>
+      <Description>"Set sensitivity"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+writeFloat("gta-sa.exe+7FC05C", 0.000312499993)
+writeFloat("gta-sa.exe+7FC058", 0.000312499993)
+
+[DISABLE]
+
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"Sensitivity X"</Description>
+          <VariableType>Float</VariableType>
+          <Address>"gta-sa.exe"+7FC05C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"Sensitivity Y"</Description>
+          <VariableType>Float</VariableType>
+          <Address>"gta-sa.exe"+7FC058</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>52</ID>
+      <Description>"Coordinates"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>524</ID>
+          <Description>"CJ position"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>54</ID>
+              <Description>"X coord"</Description>
+              <VariableType>Float</VariableType>
+              <Address>"gta-sa.exe"+00801748</Address>
+              <Offsets>
+                <Offset>284-4-4</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>55</ID>
+              <Description>"Y coord"</Description>
+              <VariableType>Float</VariableType>
+              <Address>"gta-sa.exe"+00801748</Address>
+              <Offsets>
+                <Offset>284-4</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>51</ID>
+              <Description>"Z coord"</Description>
+              <VariableType>Float</VariableType>
+              <Address>"gta-sa.exe"+00801748</Address>
+              <Offsets>
+                <Offset>284</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>525</ID>
+          <Description>"CJ speed"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>62</ID>
+              <Description>"X speed CJ"</Description>
+              <VariableType>Float</VariableType>
+              <Address>"gta-sa.exe"+896A28</Address>
+              <Offsets>
+                <Offset>44</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>63</ID>
+              <Description>"Y speed CJ"</Description>
+              <VariableType>Float</VariableType>
+              <Address>"gta-sa.exe"+896A28</Address>
+              <Offsets>
+                <Offset>44+4</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>64</ID>
+              <Description>"Z speed CJ"</Description>
+              <VariableType>Float</VariableType>
+              <Address>"gta-sa.exe"+896A28</Address>
+              <Offsets>
+                <Offset>44+8</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>56</ID>
+      <Description>"Super jump"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-//code from here to '[DISABLE]' will be used to enable the cheat
-00bec058:
-dd 3A03126A
-00bec05c:
-dd 3A03126A
- 
+{$lua}
+hk_superJump = createHotkey(superJump , VK_SPACE)
+
+
+
 [DISABLE]
-//code from here till the end of the code will be used to disable the cheat
+{$lua}
+hk_superJump.destroy()
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>5</ID>
-      <Description>"Sen x hex"</Description>
-      <ShowAsHex>1</ShowAsHex>
+      <ID>68</ID>
+      <Description>"Fly"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+hk_fly = createHotkey(forward , VK_W)
+hk_flyfast = createHotkey(fastforward , VK_W, VK_SHIFT)
+hk_slow = createHotkey(slowdown , VK_S)
+
+
+
+[DISABLE]
+{$lua}
+hk_slow.destroy()
+hk_fly.destroy()
+hk_flyfast.destroy()
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>71</ID>
+      <Description Activated="1">"Health"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"gta-sa.exe"+7FC7D8</Address>
+      <Offsets>
+        <Offset>540</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>72</ID>
+      <Description>"Money"</Description>
       <VariableType>4 Bytes</VariableType>
-      <Address>"gta-sa.exe"+7FC05C</Address>
+      <Address>"gta-sa.exe"+810188</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>73</ID>
+      <Description>"Camera"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>66</ID>
+          <Description>"Pitch"</Description>
+          <VariableType>Float</VariableType>
+          <Address>"gta-sa.exe"+7FC668</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>67</ID>
+          <Description>"Yaw"</Description>
+          <VariableType>Float</VariableType>
+          <Address>"gta-sa.exe"+7FC668+10</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>74</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+835550</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>75</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>14AB7114</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>77</ID>
+      <Description>"Stars"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"gta-sa.exe"+810218</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>83</ID>
+      <Description>"No cops"</Description>
+      <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>78</ID>
+          <Description>"Auto Assemble script"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : gta-sa.exe
+  Version: 
+  Date   : 2020-06-29
+  Author : 0xff800000
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,gta-sa.exe,89 41 2C 89 41 30 33) // should be unique
+alloc(newmem,$1000)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov eax, 0
+  mov [ecx+2C],eax
+  mov [ecx+30],eax
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 89 41 2C 89 41 30
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "gta-sa.exe"+17B4B6
+
+"gta-sa.exe"+17B496: 33 C0                 -  xor eax,eax
+"gta-sa.exe"+17B498: D9 59 14              -  fstp dword ptr [ecx+14]
+"gta-sa.exe"+17B49B: 89 01                 -  mov [ecx],eax
+"gta-sa.exe"+17B49D: 89 41 04              -  mov [ecx+04],eax
+"gta-sa.exe"+17B4A0: 89 41 08              -  mov [ecx+08],eax
+"gta-sa.exe"+17B4A3: 89 41 0C              -  mov [ecx+0C],eax
+"gta-sa.exe"+17B4A6: 89 41 10              -  mov [ecx+10],eax
+"gta-sa.exe"+17B4A9: 66 89 41 18           -  mov [ecx+18],ax
+"gta-sa.exe"+17B4AD: 88 41 28              -  mov [ecx+28],al
+"gta-sa.exe"+17B4B0: 88 81 98 02 00 00     -  mov [ecx+00000298],al
+// ---------- INJECTING HERE ----------
+"gta-sa.exe"+17B4B6: 89 41 2C              -  mov [ecx+2C],eax
+"gta-sa.exe"+17B4B9: 89 41 30              -  mov [ecx+30],eax
+// ---------- DONE INJECTING  ----------
+"gta-sa.exe"+17B4BC: 33 D2                 -  xor edx,edx
+"gta-sa.exe"+17B4BE: 89 51 1A              -  mov [ecx+1A],edx
+"gta-sa.exe"+17B4C1: 89 81 F4 01 00 00     -  mov [ecx+000001F4],eax
+"gta-sa.exe"+17B4C7: 89 81 F8 01 00 00     -  mov [ecx+000001F8],eax
+"gta-sa.exe"+17B4CD: 89 81 FC 01 00 00     -  mov [ecx+000001FC],eax
+"gta-sa.exe"+17B4D3: 89 81 00 02 00 00     -  mov [ecx+00000200],eax
+"gta-sa.exe"+17B4D9: 89 81 04 02 00 00     -  mov [ecx+00000204],eax
+"gta-sa.exe"+17B4DF: 89 81 08 02 00 00     -  mov [ecx+00000208],eax
+"gta-sa.exe"+17B4E5: 89 81 0C 02 00 00     -  mov [ecx+0000020C],eax
+"gta-sa.exe"+17B4EB: 89 81 10 02 00 00     -  mov [ecx+00000210],eax
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>76</ID>
+          <Description>"Auto Assemble script"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : gta-sa.exe
+  Version: 
+  Date   : 2020-06-28
+  Author : 0xff800000
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,gta-sa.exe,89 5E 2C 66 C7 46 19 03 02) // should be unique
+alloc(newmem,$1000)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov ebx, 0
+  mov [esi+2C],ebx
+  mov word ptr [esi+19],0203
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop
+  nop
+  nop
+  nop
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 89 5E 2C 66 C7 46 19 03 02
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "gta-sa.exe"+17AF2C
+
+"gta-sa.exe"+17AF0C: BB 02 00 00 00        -  mov ebx,00000002
+"gta-sa.exe"+17AF11: 8B D3                 -  mov edx,ebx
+"gta-sa.exe"+17AF13: 2B D7                 -  sub edx,edi
+"gta-sa.exe"+17AF15: 89 55 FC              -  mov [ebp-04],edx
+"gta-sa.exe"+17AF18: DB 45 FC              -  fild dword ptr [ebp-04]
+"gta-sa.exe"+17AF1B: 51                    -  push ecx
+"gta-sa.exe"+17AF1C: D9 1C 24              -  fstp dword ptr [esp]
+"gta-sa.exe"+17AF1F: 68 83 00 00 00        -  push 00000083
+"gta-sa.exe"+17AF24: E8 A7 7D FF FF        -  call gta-sa.exe+172CD0
+"gta-sa.exe"+17AF29: 83 C4 08              -  add esp,08
+// ---------- INJECTING HERE ----------
+"gta-sa.exe"+17AF2C: 89 5E 2C              -  mov [esi+2C],ebx
+"gta-sa.exe"+17AF2F: 66 C7 46 19 03 02     -  mov word ptr [esi+19],0203
+// ---------- DONE INJECTING  ----------
+"gta-sa.exe"+17AF35: EB 5B                 -  jmp gta-sa.exe+17AF92
+"gta-sa.exe"+17AF37: 83 F8 32              -  cmp eax,32
+"gta-sa.exe"+17AF3A: 7C 31                 -  jl gta-sa.exe+17AF6D
+"gta-sa.exe"+17AF3C: BB 01 00 00 00        -  mov ebx,00000001
+"gta-sa.exe"+17AF41: 8B CB                 -  mov ecx,ebx
+"gta-sa.exe"+17AF43: 2B CF                 -  sub ecx,edi
+"gta-sa.exe"+17AF45: 89 4D FC              -  mov [ebp-04],ecx
+"gta-sa.exe"+17AF48: DB 45 FC              -  fild dword ptr [ebp-04]
+"gta-sa.exe"+17AF4B: 51                    -  push ecx
+"gta-sa.exe"+17AF4C: D9 1C 24              -  fstp dword ptr [esp]
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79</ID>
+          <Description>"Auto Assemble script"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : gta-sa.exe
+  Version: 
+  Date   : 2020-06-29
+  Author : 0xff800000
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,gta-sa.exe,89 5E 2C 66 C7 46 19 01 01) // should be unique
+alloc(newmem,$1000)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov ebx, 0
+  mov [esi+2C],ebx
+  mov word ptr [esi+19],0101
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop
+  nop
+  nop
+  nop
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 89 5E 2C 66 C7 46 19 01 01
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "gta-sa.exe"+17AF5E
+
+"gta-sa.exe"+17AF41: 8B CB                          -  mov ecx,ebx
+"gta-sa.exe"+17AF43: 2B CF                          -  sub ecx,edi
+"gta-sa.exe"+17AF45: 89 4D FC                       -  mov [ebp-04],ecx
+"gta-sa.exe"+17AF48: DB 45 FC                       -  fild dword ptr [ebp-04]
+"gta-sa.exe"+17AF4B: 51                             -  push ecx
+"gta-sa.exe"+17AF4C: D9 1C 24                       -  fstp dword ptr [esp]
+"gta-sa.exe"+17AF4F: 68 83 00 00 00                 -  push 00000083
+"gta-sa.exe"+17AF54: E8 77 7D FF FF                 -  call gta-sa.exe+172CD0
+"gta-sa.exe"+17AF59: 83 C4 08                       -  add esp,08
+"gta-sa.exe"+17AF5C: 33 D2                          -  xor edx,edx
+// ---------- INJECTING HERE ----------
+"gta-sa.exe"+17AF5E: 89 5E 2C                       -  mov [esi+2C],ebx
+"gta-sa.exe"+17AF61: 66 C7 46 19 01 01              -  mov word ptr [esi+19],0101
+// ---------- DONE INJECTING  ----------
+"gta-sa.exe"+17AF67: 66 89 56 1C                    -  mov [esi+1C],dx
+"gta-sa.exe"+17AF6B: EB 2B                          -  jmp gta-sa.exe+17AF98
+"gta-sa.exe"+17AF6D: 83 FF 01                       -  cmp edi,01
+"gta-sa.exe"+17AF70: 75 13                          -  jne gta-sa.exe+17AF85
+"gta-sa.exe"+17AF72: D9 E8                          -  fld1 
+"gta-sa.exe"+17AF74: 51                             -  push ecx
+"gta-sa.exe"+17AF75: D9 1C 24                       -  fstp dword ptr [esp]
+"gta-sa.exe"+17AF78: 68 84 00 00 00                 -  push 00000084
+"gta-sa.exe"+17AF7D: E8 4E 7D FF FF                 -  call gta-sa.exe+172CD0
+"gta-sa.exe"+17AF82: 83 C4 08                       -  add esp,08
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>80</ID>
+          <Description>"Auto Assemble script"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : gta-sa.exe
+  Version: 
+  Date   : 2020-06-29
+  Author : 0xff800000
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,gta-sa.exe,C7 46 2C 05 00 00 00) // should be unique
+alloc(newmem,$1000)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [esi+2C],00000000
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db C7 46 2C 05 00 00 00
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "gta-sa.exe"+17AE6E
+
+"gta-sa.exe"+17AE4E: 7C 35                 -  jl gta-sa.exe+17AE85
+"gta-sa.exe"+17AE50: BA 05 00 00 00        -  mov edx,00000005
+"gta-sa.exe"+17AE55: 2B D7                 -  sub edx,edi
+"gta-sa.exe"+17AE57: 89 55 FC              -  mov [ebp-04],edx
+"gta-sa.exe"+17AE5A: DB 45 FC              -  fild dword ptr [ebp-04]
+"gta-sa.exe"+17AE5D: 51                    -  push ecx
+"gta-sa.exe"+17AE5E: D9 1C 24              -  fstp dword ptr [esp]
+"gta-sa.exe"+17AE61: 68 83 00 00 00        -  push 00000083
+"gta-sa.exe"+17AE66: E8 65 7E FF FF        -  call gta-sa.exe+172CD0
+"gta-sa.exe"+17AE6B: 83 C4 08              -  add esp,08
+// ---------- INJECTING HERE ----------
+"gta-sa.exe"+17AE6E: C7 46 2C 05 00 00 00  -  mov [esi+2C],00000005
+// ---------- DONE INJECTING  ----------
+"gta-sa.exe"+17AE75: 66 C7 46 19 08 03     -  mov word ptr [esi+19],0308
+"gta-sa.exe"+17AE7B: B8 18 00 00 00        -  mov eax,00000018
+"gta-sa.exe"+17AE80: E9 0F 01 00 00        -  jmp gta-sa.exe+17AF94
+"gta-sa.exe"+17AE85: 3D B0 04 00 00        -  cmp eax,000004B0
+"gta-sa.exe"+17AE8A: 7C 39                 -  jl gta-sa.exe+17AEC5
+"gta-sa.exe"+17AE8C: B9 04 00 00 00        -  mov ecx,00000004
+"gta-sa.exe"+17AE91: 2B CF                 -  sub ecx,edi
+"gta-sa.exe"+17AE93: 89 4D FC              -  mov [ebp-04],ecx
+"gta-sa.exe"+17AE96: DB 45 FC              -  fild dword ptr [ebp-04]
+"gta-sa.exe"+17AE99: 51                    -  push ecx
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>81</ID>
+          <Description>"Auto Assemble script"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : gta-sa.exe
+  Version: 
+  Date   : 2020-06-29
+  Author : 0xff800000
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,gta-sa.exe,C7 46 2C 04 00 00 00) // should be unique
+alloc(newmem,$1000)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [esi+2C],00000000
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db C7 46 2C 04 00 00 00
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "gta-sa.exe"+17AEAF
+
+"gta-sa.exe"+17AE8C: B9 04 00 00 00        -  mov ecx,00000004
+"gta-sa.exe"+17AE91: 2B CF                 -  sub ecx,edi
+"gta-sa.exe"+17AE93: 89 4D FC              -  mov [ebp-04],ecx
+"gta-sa.exe"+17AE96: DB 45 FC              -  fild dword ptr [ebp-04]
+"gta-sa.exe"+17AE99: 51                    -  push ecx
+"gta-sa.exe"+17AE9A: D9 1C 24              -  fstp dword ptr [esp]
+"gta-sa.exe"+17AE9D: 68 83 00 00 00        -  push 00000083
+"gta-sa.exe"+17AEA2: E8 29 7E FF FF        -  call gta-sa.exe+172CD0
+"gta-sa.exe"+17AEA7: BA 12 00 00 00        -  mov edx,00000012
+"gta-sa.exe"+17AEAC: 83 C4 08              -  add esp,08
+// ---------- INJECTING HERE ----------
+"gta-sa.exe"+17AEAF: C7 46 2C 04 00 00 00  -  mov [esi+2C],00000004
+// ---------- DONE INJECTING  ----------
+"gta-sa.exe"+17AEB6: 66 C7 46 19 06 02     -  mov word ptr [esi+19],0206
+"gta-sa.exe"+17AEBC: 66 89 56 1C           -  mov [esi+1C],dx
+"gta-sa.exe"+17AEC0: E9 D3 00 00 00        -  jmp gta-sa.exe+17AF98
+"gta-sa.exe"+17AEC5: 3D 26 02 00 00        -  cmp eax,00000226
+"gta-sa.exe"+17AECA: 7C 39                 -  jl gta-sa.exe+17AF05
+"gta-sa.exe"+17AECC: B8 03 00 00 00        -  mov eax,00000003
+"gta-sa.exe"+17AED1: 2B C7                 -  sub eax,edi
+"gta-sa.exe"+17AED3: 89 45 FC              -  mov [ebp-04],eax
+"gta-sa.exe"+17AED6: DB 45 FC              -  fild dword ptr [ebp-04]
+"gta-sa.exe"+17AED9: 51                    -  push ecx
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>82</ID>
+          <Description>"Auto Assemble script"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : gta-sa.exe
+  Version: 
+  Date   : 2020-06-29
+  Author : 0xff800000
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,gta-sa.exe,C7 46 2C 03 00 00 00) // should be unique
+alloc(newmem,$1000)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [esi+2C],00000000
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db C7 46 2C 03 00 00 00
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "gta-sa.exe"+17AEEF
+
+"gta-sa.exe"+17AECC: B8 03 00 00 00        -  mov eax,00000003
+"gta-sa.exe"+17AED1: 2B C7                 -  sub eax,edi
+"gta-sa.exe"+17AED3: 89 45 FC              -  mov [ebp-04],eax
+"gta-sa.exe"+17AED6: DB 45 FC              -  fild dword ptr [ebp-04]
+"gta-sa.exe"+17AED9: 51                    -  push ecx
+"gta-sa.exe"+17AEDA: D9 1C 24              -  fstp dword ptr [esp]
+"gta-sa.exe"+17AEDD: 68 83 00 00 00        -  push 00000083
+"gta-sa.exe"+17AEE2: E8 E9 7D FF FF        -  call gta-sa.exe+172CD0
+"gta-sa.exe"+17AEE7: B9 0C 00 00 00        -  mov ecx,0000000C
+"gta-sa.exe"+17AEEC: 83 C4 08              -  add esp,08
+// ---------- INJECTING HERE ----------
+"gta-sa.exe"+17AEEF: C7 46 2C 03 00 00 00  -  mov [esi+2C],00000003
+// ---------- DONE INJECTING  ----------
+"gta-sa.exe"+17AEF6: 66 C7 46 19 04 02     -  mov word ptr [esi+19],0204
+"gta-sa.exe"+17AEFC: 66 89 4E 1C           -  mov [esi+1C],cx
+"gta-sa.exe"+17AF00: E9 93 00 00 00        -  jmp gta-sa.exe+17AF98
+"gta-sa.exe"+17AF05: 3D B4 00 00 00        -  cmp eax,000000B4
+"gta-sa.exe"+17AF0A: 7C 2B                 -  jl gta-sa.exe+17AF37
+"gta-sa.exe"+17AF0C: BB 02 00 00 00        -  mov ebx,00000002
+"gta-sa.exe"+17AF11: 8B D3                 -  mov edx,ebx
+"gta-sa.exe"+17AF13: 2B D7                 -  sub edx,edi
+"gta-sa.exe"+17AF15: 89 55 FC              -  mov [ebp-04],edx
+"gta-sa.exe"+17AF18: DB 45 FC              -  fild dword ptr [ebp-04]
+}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>512</ID>
+      <Description>"Waypoint teleport"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+hk_setwp1 = createHotkey(setWP1 , VK_7)
+hk_gowp1 = createHotkey(gotoWP1 , VK_8)
+hk_setwp2 = createHotkey(setWP2 , VK_9)
+hk_gowp2 = createHotkey(gotoWP2 , VK_0)
+
+
+
+
+[DISABLE]
+{$lua}
+hk_gowp1.destroy()
+hk_setwp1.destroy()
+hk_gowp2.destroy()
+hk_setwp2.destroy()
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>513</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"gta-sa.exe"+6C192C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>514</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"gta-sa.exe"+80C5FC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>515</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>1244F134</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>516</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"gta-sa.exe"+7FC6E8</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>517</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>12437C8C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>518</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>124384FC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>522</ID>
+      <Description>"Z speed"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"gta-sa.exe"+7FC7D8</Address>
+      <Offsets>
+        <Offset>4c</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>526</ID>
+      <Description>"Y speed"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"gta-sa.exe"+7FC7D8</Address>
+      <Offsets>
+        <Offset>4c-4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>527</ID>
+      <Description>"X speed"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"gta-sa.exe"+7FC7D8</Address>
+      <Offsets>
+        <Offset>4c-4-4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>530</ID>
+      <Description>"Car health"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"gta-sa.exe"+7FC7D8</Address>
+      <Offsets>
+        <Offset>4c0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>523</ID>
+      <Description>"Speed structure ptr"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>519</ID>
+          <Description>"No description"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"gta-sa.exe"+80FEE0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>520</ID>
+          <Description>"No description"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"gta-sa.exe"+7FCDA0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>521</ID>
+          <Description>"No description"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"gta-sa.exe"+7FC7D8</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>528</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>11B5FCE8</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>529</ID>
+      <Description Activated="1">"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>11B2C138</Address>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
+  <LuaScript>wp1_x = 0
+wp1_y = 0
+wp1_z = 0
+wp2_x = 0
+wp2_y = 0
+wp2_z = 0
+
+function setWP1()
+    wp1_x = getAddressList().getMemoryRecordByDescription'X coord'.value
+    wp1_y = getAddressList().getMemoryRecordByDescription'Y coord'.value
+    wp1_z = getAddressList().getMemoryRecordByDescription'Z coord'.value
+end
+
+function setWP2()
+    wp2_x = getAddressList().getMemoryRecordByDescription'X coord'.value
+    wp2_y = getAddressList().getMemoryRecordByDescription'Y coord'.value
+    wp2_z = getAddressList().getMemoryRecordByDescription'Z coord'.value
+end
+
+function gotoWP1()
+    getAddressList().getMemoryRecordByDescription'X coord'.value = wp1_x
+    getAddressList().getMemoryRecordByDescription'Y coord'.value = wp1_y
+    getAddressList().getMemoryRecordByDescription'Z coord'.value = wp1_z
+end
+
+function gotoWP2()
+    getAddressList().getMemoryRecordByDescription'X coord'.value = wp2_x
+    getAddressList().getMemoryRecordByDescription'Y coord'.value = wp2_y
+    getAddressList().getMemoryRecordByDescription'Z coord'.value = wp2_z
+end
+
+function superJump()
+    local jumpForce = 2
+    local vx = getAddressList().getMemoryRecordByDescription'Z speed'.value
+    getAddressList().getMemoryRecordByDescription'Z speed'.value = vx + jumpForce
+end
+
+function forward()
+    local multSpeed = 0.1
+    local angle = getAddressList().getMemoryRecordByDescription'Yaw'.value - math.pi
+    local vx = getAddressList().getMemoryRecordByDescription'X speed'.value
+    local vy = getAddressList().getMemoryRecordByDescription'Y speed'.value
+    getAddressList().getMemoryRecordByDescription'X speed'.value = vx + multSpeed * math.cos(angle)
+    getAddressList().getMemoryRecordByDescription'Y speed'.value = vy + multSpeed * math.sin(angle)
+end
+
+function fastforward()
+    local multSpeed = 0.2
+    local angle = getAddressList().getMemoryRecordByDescription'Yaw'.value - math.pi
+    local vx = getAddressList().getMemoryRecordByDescription'X speed'.value
+    local vy = getAddressList().getMemoryRecordByDescription'Y speed'.value
+    local vz = getAddressList().getMemoryRecordByDescription'Z speed'.value
+    getAddressList().getMemoryRecordByDescription'X speed'.value = vx + multSpeed * math.cos(angle)
+    getAddressList().getMemoryRecordByDescription'Y speed'.value = vy + multSpeed * math.sin(angle)
+    getAddressList().getMemoryRecordByDescription'Z speed'.value = vz + 0.3
+end
+
+function slowdown()
+    local multSpeed = 0.5
+    local angle = getAddressList().getMemoryRecordByDescription'Yaw'.value - math.pi
+    local vx = getAddressList().getMemoryRecordByDescription'X speed'.value
+    local vy = getAddressList().getMemoryRecordByDescription'Y speed'.value
+    local vz = getAddressList().getMemoryRecordByDescription'Z speed'.value
+    getAddressList().getMemoryRecordByDescription'X speed'.value = vx * multSpeed
+    getAddressList().getMemoryRecordByDescription'Y speed'.value = vy * multSpeed
+    getAddressList().getMemoryRecordByDescription'Z speed'.value = vz * multSpeed
+end
+</LuaScript>
 </CheatTable>

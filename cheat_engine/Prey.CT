@@ -9,7 +9,7 @@
       <AssemblerScript>{ Game   : Prey.exe
   Version: 
   Date   : 2018-07-21
-  Author : Dan Yvan Baumgartner
+  Author : 0xff800000
 
   This script does blah blah blah
 }
@@ -82,7 +82,7 @@ dealloc(newmem)
       <AssemblerScript>{ Game   : Prey.exe
   Version: 
   Date   : 2018-07-21
-  Author : Dan Yvan Baumgartner
+  Author : 0xff800000
 
   This script does blah blah blah
 }
@@ -157,7 +157,7 @@ dealloc(newmem)
       <AssemblerScript>{ Game   : Prey.exe
   Version: 
   Date   : 2018-07-24
-  Author : Dan Yvan Baumgartner
+  Author : 0xff800000
 
   This script does blah blah blah
 }
